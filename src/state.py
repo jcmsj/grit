@@ -8,8 +8,7 @@ def main():
     '''Run if main module'''
     a = {loc:0 for loc in Location}
     for _ in range(100):
-        s = State()
-        a[s.location] += 1
+        a[Location.random()] += 1
     print(a)
 
 if __name__ == '__main__':
