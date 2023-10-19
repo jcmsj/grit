@@ -1,6 +1,6 @@
 # Example file showing a basic pygame "game loop"
 import pygame
-from landscapes import load_landscapes, SCREEN_HEIGHT, SCREEN_WIDTH
+from landscapes import load_landscapes, SCREEN_HEIGHT, SCREEN_WIDTH, asset
 from location import Location
 from state import State
 
@@ -11,9 +11,9 @@ pygame.display.set_caption("Grit")
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Load the buttons
-button_1 = pygame.image.load("assets/drawing.svg")# ("button_1.png")
-button_2 = pygame.image.load("assets/drawing.svg")# ("button_2.png")
-button_3 = pygame.image.load("assets/drawing.svg")# ("button_3.png")
+button_1 = pygame.image.load(asset("drawing.svg"))# ("button_1.png")
+button_2 = pygame.image.load(asset("drawing.svg"))# ("button_2.png")
+button_3 = pygame.image.load(asset("drawing.svg"))# ("button_3.png")
 
 # Set the button positions
 button_1_x = 100
