@@ -1,11 +1,11 @@
 # Example file showing a basic pygame "game loop"
 import pygame
-from landscapes import LANDSCAPES, SCREEN_HEIGHT, SCREEN_WIDTH
-
+from landscapes import load_landscapes, SCREEN_HEIGHT, SCREEN_WIDTH
 from location import Location
 from state import State
 
 pygame.init()
+
 # Create the game window
 pygame.display.set_caption("Grit")
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
@@ -23,8 +23,12 @@ button_2_y = 100
 button_3_x = 500
 button_3_y = 100
 
+# Define the game constants
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+# Landscapes thanks to freepik.com
+LANDSCAPES = load_landscapes()
 state = State()
-
 # Start the game loop
 while True:
 

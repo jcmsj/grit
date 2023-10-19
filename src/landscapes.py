@@ -7,14 +7,15 @@ from location import Location
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 # Landscapes thanks to freepik.com
-LANDSCAPES: dict[Location, Surface] = {
-    l: transform.scale(img, (SCREEN_WIDTH, SCREEN_HEIGHT)) for l,img in
-        # https://www.pygame.org/docs/tut/newbieguide.html#use-surface-convert
-        {l:image.load(src).convert() for l,src in {
-            Location.Forest: "assets/forest.jpg",
-            Location.Mountain: "assets/mntn.jpg",
-            Location.River: "assets/river.jpg",
-            Location.Road: "assets/road.png",
+def load_landscapes() -> dict[Location, Surface]:
+    return {
+        l: transform.scale(img, (SCREEN_WIDTH, SCREEN_HEIGHT)) for l,img in
+            # https://www.pygame.org/docs/tut/newbieguide.html#use-surface-convert
+            {l:image.load(src) for l,src in {
+                Location.Forest: "assets/forest.jpg",
+                Location.Mountain: "assets/mntn.jpg",
+                Location.River: "assets/river.jpg",
+                Location.Road: "assets/road.png",
+            }.items()
         }.items()
-    }.items()
-}
+    }
